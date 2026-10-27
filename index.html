@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent City Labs</title>
+<meta name="description" content="Agent City Labs builds Agent City: crews of Claude-powered agents that research, build and run small online businesses, with a human approving every dollar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EDF0F3;
+  --paper-2:#E1E6EC;
+  --ink:#18213A;
+  --ink-soft:#4A546D;
+  --street:#FFFFFF;
+  --commercial:#E0563B;
+  --industrial:#6A5AA8;
+  --residential:#F1C243;
+  --park:#4B9C5A;
+  --transit:#2F78D0;
+  --rule:#C5CDD8;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Archivo",system-ui,sans-serif;font-variation-settings:"wdth" 100;
+  font-size:1.0625rem;line-height:1.55;
+}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--transit);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+
+/* header */
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:750;font-variation-settings:"wdth" 118;letter-spacing:-.01em;font-size:1.05rem}
+.mark svg{flex:none}
+header nav a{font-weight:550;text-decoration:none;border-bottom:2px solid var(--ink);padding-bottom:1px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:48px;align-items:center;padding:36px 0 72px}
+h1{
+  font-weight:800;font-variation-settings:"wdth" 125;
+  font-size:clamp(2.3rem,5.2vw,4.3rem);line-height:.98;letter-spacing:-.025em;margin:0 0 24px;
+}
+.lede{font-size:1.2rem;color:var(--ink-soft);max-width:34em;margin:0 0 32px}
+.cta{display:inline-block;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:650;padding:14px 22px;border-radius:4px}
+.cta:hover{background:#000}
+.cta:focus-visible{outline:3px solid var(--transit);outline-offset:3px}
+.map{width:100%;height:auto;display:block}
+.map text{font-family:"Archivo",sans-serif}
+.block{transform-box:fill-box;transform-origin:center}
+@media (prefers-reduced-motion:no-preference){
+  .block{animation:zone .55s cubic-bezier(.2,.7,.2,1) both}
+  .block:nth-of-type(1){animation-delay:.05s}.block:nth-of-type(2){animation-delay:.15s}
+  .block:nth-of-type(3){animation-delay:.25s}.block:nth-of-type(4){animation-delay:.35s}
+  .block:nth-of-type(5){animation-delay:.45s}
+  @keyframes zone{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
+}
+
+/* sections */
+section{padding:64px 0;border-top:1px solid var(--rule)}
+h2{font-weight:750;font-variation-settings:"wdth" 112;font-size:clamp(1.6rem,2.8vw,2.2rem);line-height:1.1;letter-spacing:-.015em;margin:0 0 14px}
+.intro{color:var(--ink-soft);max-width:40em;margin:0 0 40px}
+
+.tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+.tier h3{font-size:1.15rem;font-weight:700;margin:14px 0 6px}
+.tier p{margin:0;color:var(--ink-soft)}
+.glyph{display:block}
+
+/* legend table */
+.legend{width:100%;border-collapse:collapse}
+.legend th{text-align:left;font-weight:600;font-size:.9rem;color:var(--ink-soft);padding:0 16px 12px 0;border-bottom:2px solid var(--ink)}
+.legend td{padding:18px 16px 18px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.legend td:first-child{width:44px}
+.sw{display:block;width:28px;height:28px;border-radius:3px}
+.legend .name{font-weight:700;white-space:nowrap}
+.legend .status{color:var(--ink-soft);white-space:nowrap}
+.hatch{background:repeating-linear-gradient(45deg,var(--paper-2) 0 4px,var(--rule) 4px 6px)}
+
+.rules{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;list-style:none;padding:0;margin:0}
+.rules li{border-left:4px solid var(--transit);padding-left:18px}
+.rules strong{display:block;font-size:1.15rem;margin-bottom:6px}
+.rules span{color:var(--ink-soft)}
+
+.contact{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:40px;align-items:end}
+.contact p{margin:0;color:var(--ink-soft);max-width:34em}
+.email{font-weight:750;font-variation-settings:"wdth" 112;font-size:clamp(1.3rem,3vw,2rem);text-decoration:none;border-bottom:3px solid var(--commercial);word-break:break-word}
+
+footer{padding:28px 0 40px;color:var(--ink-soft);font-size:.92rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid var(--rule)}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;gap:36px;padding-top:16px}
+  .tiers,.rules{grid-template-columns:1fr;gap:28px}
+  .contact{grid-template-columns:1fr;gap:20px}
+  .legend thead{display:none}
+  .legend tr{display:grid;grid-template-columns:44px 1fr;column-gap:0;border-bottom:1px solid var(--rule);padding:16px 0}
+  .legend td{border:0;padding:0}
+  .legend td:first-child{grid-row:span 3}
+  .legend td.what{grid-column:2;margin-top:4px}
+  .legend td.status{grid-column:2;margin-top:4px;white-space:normal}
+}
+@media (max-width:480px){.wrap{padding:0 16px}header nav a{font-size:.95rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="mark" href="/" aria-label="Agent City Labs home">
+    <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+      <rect x="1" y="1" width="11" height="11" rx="1.5" fill="#E0563B"/>
+      <rect x="14" y="1" width="11" height="11" rx="1.5" fill="#6A5AA8"/>
+      <rect x="1" y="14" width="11" height="11" rx="1.5" fill="#F1C243"/>
+      <rect x="14" y="14" width="11" height="11" rx="1.5" fill="#4B9C5A"/>
+      <circle cx="13" cy="13" r="4.2" fill="#18213A" stroke="#EDF0F3" stroke-width="1.6"/>
+    </svg>
+    Agent City Labs
+  </a>
+  <nav><a href="mailto:josh@agentcitylabs.com">Contact</a></nav>
+</header>
+
+<main>
+<div class="hero">
+  <div>
+    <h1>A city of AI agents that runs small online businesses.</h1>
+    <p class="lede">Agent City gives each business its own district of Claude-powered agents for research, design, listings, pricing and promotion. A Director agent oversees every district and reports to a human each morning. Nothing gets spent without a person saying yes.</p>
+    <a class="cta" href="mailto:josh@agentcitylabs.com">Email the founder</a>
+  </div>
+
+  <svg class="map" viewBox="0 0 600 520" role="img" aria-labelledby="mapTitle mapDesc">
+    <title id="mapTitle">Map of Agent City</title>
+    <desc id="mapDesc">A city map with the Director agent at the central plaza and a colored district for each business: Etsy, Amazon FBA, dropshipping, digital products and clipping, plus unzoned lots for future businesses.</desc>
+    <defs>
+      <pattern id="lot" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <rect width="8" height="8" fill="#E1E6EC"/><rect width="2.5" height="8" fill="#C5CDD8"/>
+      </pattern>
+    </defs>
+    <rect width="600" height="520" rx="6" fill="#DDE3EA"/>
+    <!-- river -->
+    <path d="M0 470 C120 440 200 505 320 478 S520 430 600 452 L600 520 L0 520 Z" fill="#2F78D0" opacity=".9"/>
+    <!-- unzoned lots -->
+    <rect x="20" y="20" width="110" height="80" rx="3" fill="url(#lot)"/>
+    <rect x="470" y="20" width="110" height="80" rx="3" fill="url(#lot)"/>
+    <rect x="20" y="370" width="110" height="70" rx="3" fill="url(#lot)"/>
+    <rect x="470" y="300" width="110" height="80" rx="3" fill="url(#lot)"/>
+    <!-- districts -->
+    <g class="block"><rect x="150" y="20" width="140" height="190" rx="3" fill="#E0563B"/><text x="166" y="50" font-size="17" font-weight="700" fill="#fff">Etsy</text><text x="166" y="70" font-size="12" fill="#fff" opacity=".9">first district</text></g>
+    <g class="block"><rect x="310" y="20" width="140" height="190" rx="3" fill="#6A5AA8"/><text x="326" y="50" font-size="17" font-weight="700" fill="#fff">Amazon FBA</text><text x="326" y="70" font-size="12" fill="#fff" opacity=".9">next to open</text></g>
+    <g class="block"><rect x="20" y="120" width="110" height="230" rx="3" fill="#F1C243"/><text x="34" y="150" font-size="15" font-weight="700" fill="#18213A">Drop-</text><text x="34" y="168" font-size="15" font-weight="700" fill="#18213A">shipping</text></g>
+    <g class="block"><rect x="150" y="300" width="300" height="140" rx="3" fill="#4B9C5A"/><text x="166" y="330" font-size="17" font-weight="700" fill="#fff">Digital products</text></g>
+    <g class="block"><rect x="470" y="120" width="110" height="160" rx="3" fill="#18213A" opacity=".82"/><text x="484" y="150" font-size="15" font-weight="700" fill="#fff">Clipping</text></g>
+    <!-- plaza -->
+    <rect x="150" y="230" width="300" height="50" fill="#FFFFFF"/>
+    <circle cx="300" cy="255" r="46" fill="#FFFFFF"/>
+    <circle cx="300" cy="255" r="34" fill="#18213A"/>
+    <text x="300" y="252" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Director</text>
+    <text x="300" y="267" text-anchor="middle" font-size="10" fill="#fff" opacity=".85">AXIOM</text>
+    <!-- agent buildings -->
+    <g fill="#fff" opacity=".85">
+      <rect x="166" y="160" width="22" height="34" rx="1"/><rect x="194" y="146" width="22" height="48" rx="1"/><rect x="222" y="170" width="22" height="24" rx="1"/><rect x="250" y="152" width="22" height="42" rx="1"/>
+      <rect x="326" y="150" width="22" height="44" rx="1"/><rect x="354" y="166" width="22" height="28" rx="1"/><rect x="382" y="140" width="22" height="54" rx="1"/>
+    </g>
+  </svg>
+</div>
+
+<section aria-labelledby="org">
+  <h2 id="org">How the city is organized</h2>
+  <p class="intro">Every business is a district. The same three-level structure runs each one, so a new business can be added without rebuilding the rest.</p>
+  <div class="tiers">
+    <div class="tier">
+      <svg class="glyph" width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20" fill="#18213A"/></svg>
+      <h3>The Director</h3>
+      <p>Sits at the center of the city, watches every district and sends one plain-language report each morning.</p>
+    </div>
+    <div class="tier">
+      <svg class="glyph" width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><rect x="4" y="4" width="36" height="36" rx="3" fill="#E0563B"/></svg>
+      <h3>District managers</h3>
+      <p>One per business. A manager plans the work, assigns it to its agents and cuts anything that wastes time or credits.</p>
+    </div>
+    <div class="tier">
+      <svg class="glyph" width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><rect x="4" y="14" width="10" height="26" rx="1" fill="#6A5AA8"/><rect x="17" y="4" width="10" height="36" rx="1" fill="#6A5AA8"/><rect x="30" y="20" width="10" height="20" rx="1" fill="#6A5AA8"/></svg>
+      <h3>Agents</h3>
+      <p>Specialists that do the work: market research, product design, listings, pricing against competitors and social posts.</p>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="districts">
+  <h2 id="districts">Districts</h2>
+  <p class="intro">Each district is a business model with its own crew. Districts open one at a time and are switched on by hand.</p>
+  <table class="legend">
+    <thead><tr><th scope="col"><span class="sr" style="position:absolute;left:-9999px">Color</span></th><th scope="col">District</th><th scope="col">What its agents do</th><th scope="col">Status</th></tr></thead>
+    <tbody>
+      <tr><td><span class="sw" style="background:#E0563B"></span></td><td class="name">Etsy</td><td class="what">Find niches, name shops, draft designs across product types and manage listings.</td><td class="status">First district, in build-out</td></tr>
+      <tr><td><span class="sw" style="background:#6A5AA8"></span></td><td class="name">Amazon FBA</td><td class="what">Product research and sourcing for private-label goods.</td><td class="status">Next to open</td></tr>
+      <tr><td><span class="sw" style="background:#4B9C5A"></span></td><td class="name">Digital products</td><td class="what">Create and list downloadable products.</td><td class="status">In development</td></tr>
+      <tr><td><span class="sw" style="background:#F1C243"></span></td><td class="name">Dropshipping</td><td class="what">Test products and suppliers before any stock is bought.</td><td class="status">Planned</td></tr>
+      <tr><td><span class="sw" style="background:#18213A;opacity:.82"></span></td><td class="name">Clipping</td><td class="what">Cut long videos into short clips and thumbnails.</td><td class="status">Planned</td></tr>
+      <tr><td><span class="sw hatch"></span></td><td class="name">Unzoned</td><td class="what">Room for new business models as they are researched and approved.</td><td class="status">Open</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section aria-labelledby="rules">
+  <h2 id="rules">Rules of the city</h2>
+  <p class="intro">Agents move fast. People stay in charge of money and direction.</p>
+  <ul class="rules">
+    <li><strong>Every dollar needs a yes</strong><span>Agents propose each expense with its price and purpose. A person approves, changes or declines it before anything is paid.</span></li>
+    <li><strong>A night shift that reports back</strong><span>Research and drafting run overnight, and everything the agents made is waiting in one place by morning.</span></li>
+    <li><strong>Built on Claude</strong><span>Every manager and agent in the city runs on Claude models from Anthropic.</span></li>
+  </ul>
+</section>
+
+<section aria-labelledby="talk" class="contact">
+  <div>
+    <h2 id="talk">Talk to us</h2>
+    <p>Agent City Labs is a founder-led startup in Princeton, New Jersey, started by Josh Kosukhin. Questions, partnerships and press go to one inbox.</p>
+  </div>
+  <a class="email" href="mailto:josh@agentcitylabs.com">josh@agentcitylabs.com</a>
+</section>
+</main>
+
+<footer>
+  <span>© 2026 Agent City Labs</span>
+  <span>Princeton, New Jersey</span>
+</footer>
+</div>
+</body>
+</html>
